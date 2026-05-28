@@ -106,8 +106,6 @@ section {
     box-shadow:0 0 20px rgba(255,79,216,0.4);
 }
 
-.btn:hover { transform:scale(1.1); }
-
 /* GRID */
 .grid {
     display:grid;
@@ -123,26 +121,6 @@ section {
     padding:20px;
     border-radius:15px;
     border:1px solid rgba(255,255,255,0.1);
-    transition:0.3s;
-}
-
-.card:hover {
-    transform:translateY(-8px);
-    box-shadow:0 0 25px #7a5cff;
-}
-
-/* STATS */
-.stats {
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-    margin-top:30px;
-}
-
-.stat-box {
-    background: rgba(255,255,255,0.05);
-    padding:20px;
-    border-radius:15px;
 }
 
 /* FOOTER */
@@ -172,8 +150,9 @@ footer {
 </div>
 </nav>
 
-<!-- HOME -->
+<!-- HOME (ALL CONTENT VISIBLE HERE TOO) -->
 <section id="home" class="active hero">
+
 <h1>Synent Technology</h1>
 <p>
 We build next-generation AI systems, cloud infrastructure, cybersecurity platforms,
@@ -182,6 +161,7 @@ and digital transformation solutions for global enterprises.
 
 <button class="btn" onclick="alert('Welcome to Synent 🚀')">Get Started</button>
 
+<h2 style="margin-top:50px;">Services</h2>
 <div class="grid">
 <div class="card">⚡ AI Automation Systems</div>
 <div class="card">☁️ Cloud Infrastructure</div>
@@ -189,78 +169,62 @@ and digital transformation solutions for global enterprises.
 <div class="card">📱 Smart Application Development</div>
 </div>
 
-<div class="stats">
-<div class="stat-box">🚀 150+ Projects</div>
-<div class="stat-box">🌍 20+ Countries</div>
-<div class="stat-box">🤖 50+ AI Models</div>
-<div class="stat-box">🔐 99.9% Security Rate</div>
-</div>
-
-<!-- SERVICES ALSO VISIBLE HERE -->
-<h2 style="margin-top:50px;">Our Services (Also on Home Page)</h2>
-
+<h2 style="margin-top:50px;">Products</h2>
 <div class="grid">
-<div class="card">
-<h3>AI Development</h3>
-<p>We create intelligent AI systems, chatbots, predictive models, and automation tools.</p>
+<div class="card">SynAI Chat</div>
+<div class="card">SynCloud</div>
+<div class="card">SynVision AI</div>
+<div class="card">SynSecure</div>
 </div>
 
-<div class="card">
-<h3>Cloud Computing</h3>
-<p>Scalable cloud infrastructure, storage systems, and deployment platforms.</p>
-</div>
-
-<div class="card">
-<h3>Web Development</h3>
-<p>Modern responsive websites, dashboards, and enterprise applications.</p>
-</div>
-
-<div class="card">
-<h3>Cyber Security</h3>
-<p>Advanced protection systems, threat detection, and data encryption solutions.</p>
-</div>
-</div>
-
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-<h1>Our Services</h1>
-
-<div class="grid">
-<div class="card"><h3>AI Development</h3><p>AI systems and automation tools.</p></div>
-<div class="card"><h3>Cloud Computing</h3><p>Scalable cloud infrastructure.</p></div>
-<div class="card"><h3>Web Development</h3><p>Responsive modern websites.</p></div>
-<div class="card"><h3>Cyber Security</h3><p>Threat detection and protection.</p></div>
-</div>
-</section>
-
-<!-- PRODUCTS -->
-<section id="products">
-<h1>Our Products</h1>
-
-<div class="grid">
-<div class="card"><h3>SynAI Chat</h3><p>AI chatbot system.</p></div>
-<div class="card"><h3>SynCloud</h3><p>Cloud platform.</p></div>
-<div class="card"><h3>SynVision AI</h3><p>Image recognition AI.</p></div>
-<div class="card"><h3>SynSecure</h3><p>Cyber defense system.</p></div>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-<h1>About Synent</h1>
-
-<p style="max-width:800px;margin:auto;color:#cfcfff;">
+<h2 style="margin-top:50px;">About</h2>
+<div class="card" style="max-width:800px;margin:auto;">
 Synent Technology is a futuristic innovation company focused on AI, Cloud Computing,
 Cyber Security, and Digital Transformation.
+</div>
+
+<h2 style="margin-top:50px;">Contact</h2>
+<div class="card" style="max-width:400px;margin:auto;">
+<p>Email: contact@synent.ai</p>
+<p>Phone: +91 98765 43210</p>
+<p>Location: India</p>
+</div>
+
+</section>
+
+<!-- SERVICES PAGE -->
+<section id="services">
+<h1>Our Services</h1>
+<div class="grid">
+<div class="card">AI Development</div>
+<div class="card">Cloud Computing</div>
+<div class="card">Web Development</div>
+<div class="card">Cyber Security</div>
+</div>
+</section>
+
+<!-- PRODUCTS PAGE -->
+<section id="products">
+<h1>Our Products</h1>
+<div class="grid">
+<div class="card">SynAI Chat</div>
+<div class="card">SynCloud</div>
+<div class="card">SynVision AI</div>
+<div class="card">SynSecure</div>
+</div>
+</section>
+
+<!-- ABOUT PAGE -->
+<section id="about">
+<h1>About Synent</h1>
+<p style="max-width:800px;margin:auto;">
+Synent Technology is focused on building future-ready AI and cloud systems.
 </p>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT PAGE -->
 <section id="contact">
 <h1>Contact Us</h1>
-
 <div class="card" style="max-width:400px;margin:auto;">
 <p>Email: contact@synent.ai</p>
 <p>Phone: +91 98765 43210</p>
