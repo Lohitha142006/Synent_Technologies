@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synent Technologies Portal</title>
+    
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
+        }
+
+        body{
+
+            background:#050816;
+
+            height:100vh;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            overflow:hidden;
+        }
+
+        .container{
+
+            width:420px;
+
+            background:rgba(255,255,255,0.08);
+
+            backdrop-filter:blur(15px);
+
+            padding:40px;
+
+            border-radius:25px;
+
+            box-shadow:0 0 25px rgba(140,82,255,0.8);
+
+            color:white;
+
+            animation:glow 3s infinite alternate;
+        }
+
+        @keyframes glow{
+
+            from{
+                box-shadow:0 0 15px #7f5af0;
+            }
+
+            to{
+                box-shadow:0 0 35px #ff4ecd;
+            }
+        }
+
+        h1{
+
+            text-align:center;
+
+            margin-bottom:10px;
+
+            color:#d9a7ff;
+        }
+
+        p{
+
+            text-align:center;
+
+            margin-bottom:25px;
+
+            color:#ddd;
+        }
+
+        input{
+
+            width:100%;
+
+            padding:14px;
+
+            margin-bottom:18px;
+
+            border:none;
+
+            border-radius:12px;
+
+            outline:none;
+
+            background:rgba(255,255,255,0.15);
+
+            color:white;
+
+            font-size:15px;
+        }
+
+        input::placeholder{
+            color:#ddd;
+        }
+
+        button{
+
+            width:100%;
+
+            padding:14px;
+
+            border:none;
+
+            border-radius:12px;
+
+            background:linear-gradient(to right,#8a2be2,#ff4ecd);
+
+            color:white;
+
+            font-size:16px;
+
+            cursor:pointer;
+
+            transition:0.3s;
+        }
+
+        button:hover{
+
+            transform:scale(1.03);
+        }
+
+        .links{
+
+            margin-top:18px;
+
+            text-align:center;
+        }
+
+        .links a{
+
+            color:#d9a7ff;
+
+            text-decoration:none;
+
+            cursor:pointer;
+        }
+
+        .hidden{
+            display:none;
+        }
+
+        .dashboard{
+
+            text-align:center;
+        }
+
+        .dashboard h2{
+
+            margin-bottom:20px;
+
+            color:#ffb6ff;
+        }
+
+        .logout-btn{
+
+            margin-top:20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+
+    <div class="container" id="loginBox">
+
+        <h1>Synent Technologies</h1>
+        <p>signup and login the account</p>
+
+        <p>Secure Login Portal</p>
+
+        <input type="text" id="loginUser" placeholder="Username">
+
+        <input type="password" id="loginPass" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <div class="links">
+
+            <p>
+                <a onclick="showForgot()">
+                    Forgot Password?
+                </a>
+            </p>
+
+            <p>
+                Don't have an account?
+                <a onclick="showSignup()">
+                    Signup
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- SIGNUP -->
+
+    <div class="container hidden" id="signupBox">
+
+        <h1>Create Account</h1>
+
+        <input type="text" id="signupUser" placeholder="Username">
+
+        <input type="email" id="signupEmail" placeholder="Email">
+
+        <input type="password" id="signupPass" placeholder="Password">
+
+        <button onclick="signup()">Signup</button>
+
+        <div class="links">
+
+            <p>
+                Already have account?
+                <a onclick="showLogin()">
+                    Login
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- FORGOT PASSWORD -->
+
+    <div class="container hidden" id="forgotBox">
+
+        <h1>Reset Password</h1>
+
+        <input type="email" id="forgotEmail" placeholder="Enter Email">
+
+        <input type="password" id="newPass" placeholder="New Password">
+
+        <button onclick="resetPassword()">
+            Reset Password
+        </button>
+
+        <div class="links">
+
+            <a onclick="showLogin()">
+                Back to Login
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- DASHBOARD -->
+
+    <div class="container hidden dashboard" id="dashboardBox">
+
+        <h2>Welcome to Dashboard</h2>
+
+        <p id="welcomeUser"></p>
+
+        <button class="logout-btn" onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+<script>
+
+    let currentUser = "";
+
+    function showSignup(){
+
+        loginBox.classList.add("hidden");
+        signupBox.classList.remove("hidden");
+        forgotBox.classList.add("hidden");
+    }
+
+    function showLogin(){
+
+        loginBox.classList.remove("hidden");
+        signupBox.classList.add("hidden");
+        forgotBox.classList.add("hidden");
+        dashboardBox.classList.add("hidden");
+    }
+
+    function showForgot(){
+
+        loginBox.classList.add("hidden");
+        forgotBox.classList.remove("hidden");
+    }
+
+    function signup(){
+
+        const username =
+        document.getElementById("signupUser").value;
+
+        const password =
+        document.getElementById("signupPass").value;
+
+        localStorage.setItem("username",username);
+        localStorage.setItem("password",password);
+
+        alert("Signup Successful");
+
+        showLogin();
+    }
+
+    function login(){
+
+        const username =
+        document.getElementById("loginUser").value;
+
+        const password =
+        document.getElementById("loginPass").value;
+
+        const savedUser =
+        localStorage.getItem("username");
+
+        const savedPass =
+        localStorage.getItem("password");
+
+        if(username===savedUser && password===savedPass){
+
+            currentUser=username;
+
+            loginBox.classList.add("hidden");
+
+            dashboardBox.classList.remove("hidden");
+
+            document.getElementById("welcomeUser")
+            .innerHTML="Hello "+currentUser;
+
+        }
+
+        else{
+
+            alert("Invalid Credentials");
+        }
+    }
+
+    function resetPassword(){
+
+        const newPassword =
+        document.getElementById("newPass").value;
+
+        localStorage.setItem("password",newPassword);
+
+        alert("Password Reset Successful");
+
+        showLogin();
+    }
+
+    function logout(){
+
+        dashboardBox.classList.add("hidden");
+
+        showLogin();
+    }
+
+</script>
+
+</body>
+</html>
