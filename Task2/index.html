@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synent Technology</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #0b001a, #04000d);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Glow background */
+.glow {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: 0;
+    animation: float 6s infinite alternate;
+}
+
+.glow1 { background:#ff4fd8; top:10%; left:5%; }
+.glow2 { background:#7a5cff; bottom:10%; right:5%; }
+.glow3 { background:#2d6cff; top:50%; left:50%; }
+
+@keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(40px); }
+}
+
+/* NAV */
+nav {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 20px;
+    background: rgba(10,0,30,0.7);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.logo {
+    font-size:22px;
+    font-weight:bold;
+    background: linear-gradient(90deg,#ff4fd8,#7a5cff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+nav a {
+    color:white;
+    margin:0 10px;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+nav a:hover { color:#ff4fd8; }
+
+/* SECTIONS */
+section {
+    display:none;
+    padding:70px 20px;
+    text-align:center;
+    position:relative;
+    z-index:1;
+    animation: fade 0.5s ease;
+}
+
+.active { display:block; }
+
+@keyframes fade {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* HERO */
+.hero h1 {
+    font-size:3rem;
+    background: linear-gradient(90deg,#ff4fd8,#7a5cff,#2d6cff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p {
+    max-width:700px;
+    margin:auto;
+    color:#cfcfff;
+}
+
+/* BUTTON */
+.btn {
+    margin-top:20px;
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    background: linear-gradient(90deg,#ff4fd8,#7a5cff);
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(255,79,216,0.4);
+}
+
+.btn:hover { transform:scale(1.1); }
+
+/* GRID */
+.grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:auto;
+    margin-top:20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.3s;
+}
+
+.card:hover {
+    transform:translateY(-8px);
+    box-shadow:0 0 25px #7a5cff;
+}
+
+/* STATS */
+.stats {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.stat-box {
+    background: rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:15px;
+}
+
+/* FOOTER */
+footer {
+    text-align:center;
+    padding:20px;
+    background: rgba(0,0,0,0.4);
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+<div class="glow glow3"></div>
+
+<nav>
+<div class="logo">SYNENT</div>
+<div>
+<a onclick="show('home')">Home</a>
+<a onclick="show('services')">Services</a>
+<a onclick="show('products')">Products</a>
+<a onclick="show('about')">About</a>
+<a onclick="show('contact')">Contact</a>
+</div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active hero">
+<h1>Synent Technology</h1>
+<p>
+We build next-generation AI systems, cloud infrastructure, cybersecurity platforms,
+and digital transformation solutions for global enterprises.
+</p>
+
+<button class="btn" onclick="alert('Welcome to Synent 🚀')">Get Started</button>
+
+<div class="grid">
+<div class="card">⚡ AI Automation Systems</div>
+<div class="card">☁️ Cloud Infrastructure</div>
+<div class="card">🔐 Cyber Security Defense</div>
+<div class="card">📱 Smart Application Development</div>
+</div>
+
+<div class="stats">
+<div class="stat-box">🚀 150+ Projects</div>
+<div class="stat-box">🌍 20+ Countries</div>
+<div class="stat-box">🤖 50+ AI Models</div>
+<div class="stat-box">🔐 99.9% Security Rate</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h1>Our Services</h1>
+
+<div class="grid">
+<div class="card">
+<h3>AI Development</h3>
+<p>We create intelligent AI systems, chatbots, predictive models, and automation tools.</p>
+</div>
+
+<div class="card">
+<h3>Cloud Computing</h3>
+<p>Scalable cloud infrastructure, storage systems, and deployment platforms.</p>
+</div>
+
+<div class="card">
+<h3>Web Development</h3>
+<p>Modern responsive websites, dashboards, and enterprise applications.</p>
+</div>
+
+<div class="card">
+<h3>Cyber Security</h3>
+<p>Advanced protection systems, threat detection, and data encryption solutions.</p>
+</div>
+</div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+<h1>Our Products</h1>
+
+<div class="grid">
+<div class="card">
+<h3>SynAI Chat</h3>
+<p>AI chatbot for customer support and automation.</p>
+</div>
+
+<div class="card">
+<h3>SynCloud</h3>
+<p>Secure cloud storage and computing platform.</p>
+</div>
+
+<div class="card">
+<h3>SynVision AI</h3>
+<p>Advanced image recognition and computer vision system.</p>
+</div>
+
+<div class="card">
+<h3>SynSecure</h3>
+<p>Real-time cyber threat monitoring and defense system.</p>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h1>About Synent</h1>
+
+<p style="max-width:800px;margin:auto;color:#cfcfff;">
+Synent Technology is a futuristic innovation company focused on Artificial Intelligence,
+Cloud Computing, Cyber Security, and Digital Transformation. Our mission is to build
+intelligent systems that empower businesses and improve global technology infrastructure.
+</p>
+
+<div class="grid">
+<div class="card">🌟 Vision: AI-powered future</div>
+<div class="card">🎯 Mission: Digital transformation</div>
+<div class="card">💡 Innovation-driven company</div>
+<div class="card">🌍 Global technology leader</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h1>Contact Us</h1>
+
+<div class="card" style="max-width:400px;margin:auto;">
+<p>Email: contact@synent.ai</p>
+<p>Phone: +91 98765 43210</p>
+<p>Location: India</p>
+</div>
+</section>
+
+<footer>
+© 2026 Synent Technology | Built for Future Innovation 🚀
+</footer>
+
+<script>
+function show(id){
+document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+}
+</script>
+
+</body>
+</html>
